@@ -10,10 +10,28 @@ version: 1.0.0
   <template>
     <style>
       :host {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #content-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      #content-container >::content svg,
+      #content-container >::content img {
+        width: 100%;
+        height: 100%;
       }
     </style>
-    <content></content>
+    <div id="content-container">
+      <content></content>
+    </div>
   </template>
 
   <script>
