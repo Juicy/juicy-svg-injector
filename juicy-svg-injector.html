@@ -1,37 +1,22 @@
-<script src="../svg-injector/dist/svg-injector.min.js"></script>
+<script src="vendor/svg-injector.js"></script>
 <link rel="import" href="../polymer/polymer.html">
 <dom-module id="juicy-svg-injector">
 
   <template>
     <style>
       :host {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      svg,
-      img {
-        width: 100%;
-        height: 100%;
+        display: inline-block;
       }
     </style>
-    <img id="image" src="{{src}}">
+    <content></content>
   </template>
 
   <script>
     Polymer({
       is: "juicy-svg-injector",
-      properties: {
-        src: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_srcChanged'
-        }
-      },
-
-      _srcChanged: function(src) {
-        SVGInjector(this.$.image);
+      attached: function() {
+        var elems = this.querySelectorAll('img');
+        SVGInjector(elems);
       }
     });
   </script>

@@ -8,6 +8,7 @@
 
   <!-- Importing Web Component's Polyfill -->
   <script src="//cdn.jsdelivr.net/webcomponentsjs/0.7.17/webcomponents.min.js"></script>
+  <!-- <script src="//rawgit.com/webcomponents/webcomponentsjs/c532ebd6c764037242f51f9e4049e3d7dee0974a/webcomponents.js"></script> -->
 
   <!-- Importing Custom Elements -->
   <link rel="import" href="juicy-svg-injector.html">
@@ -53,21 +54,34 @@
     juicy-svg-injector {
       width: 200px;
       height: 200px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    juicy-svg-injector /deep/ svg path:nth-child(2) {
+    juicy-svg-injector svg,
+    juicy-svg-injector img {
+      width: 100%;
+      height: 100%;
+    }
+
+    juicy-svg-injector img {
+      display: none;
+    }
+    
+    juicy-svg-injector svg path:nth-child(2) {
       fill: green;
     }
 
-    juicy-svg-injector:hover /deep/ svg path:nth-child(2) {
+    juicy-svg-injector:hover svg path:nth-child(2) {
       fill: seagreen;
     }
 
-    juicy-svg-injector /deep/ svg path:nth-child(3) {
+    juicy-svg-injector svg path:nth-child(3) {
       fill: limegreen;
     }
 
-    juicy-svg-injector:hover /deep/ svg path:nth-child(3) {
+    juicy-svg-injector:hover svg path:nth-child(3) {
       fill: darkseagreen;
     }
   </style>
@@ -87,7 +101,9 @@
       <section>
         <p>Why is this cool? Because it let's you fill it with
           <strong>color</strong>!</p>
-        <juicy-svg-injector src="html5.svg"></juicy-svg-injector>
+        <juicy-svg-injector>
+          <img src="html5.svg">
+        </juicy-svg-injector>
       </section>
     </div>
 

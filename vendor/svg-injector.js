@@ -1,4 +1,5 @@
 /**
+ * modified by warpech for use with webcomponents.js (CTRL+F warpech)
  * SVGInjector v1.1.3 - Fast, caching, dynamic inline SVG DOM injection library
  * https://github.com/iconic/SVGInjector
  *
@@ -127,7 +128,10 @@
           if (httpRequest.status === 200 || (isLocal && httpRequest.status === 0)) {
 
             /* globals Document */
-            if (httpRequest.responseXML instanceof Document) {
+            //warpech: the following line is incompatible with webcomponents.js 0.7.17 (returns false in Safari and Firefox. Without polyfill returns true)
+            //possibly related to: https://github.com/webcomponents/webcomponentsjs/issues/436
+            //if (httpRequest.responseXML instanceof Document) {
+            if (httpRequest.responseXML instanceof XMLDocument) {
               // Cache it
               svgCache[url] = httpRequest.responseXML.documentElement;
             }
@@ -374,7 +378,10 @@
       });
 
       // Replace the image with the svg
-      el.parentNode.replaceChild(svg, el);
+      //warpech: the following line is incompatible with webcomponents.js 0.7.17 (says that svg is not instanceof Node in Firefox and Safari. works as expected without polyfill)
+      //possibly related to: https://github.com/webcomponents/webcomponentsjs/issues/436
+      //el.parentNode.replaceChild(svg, el);
+      el.parentNode.innerHTML = svg.outerHTML;
 
       // Now that we no longer need it, drop references
       // to the original element so it can be GC'd
