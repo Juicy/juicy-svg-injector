@@ -1,0 +1,27 @@
+{
+  "name": "juicy-svg-injector",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Juicy/juicy-svg-injector",
+  "authors": [
+    "Marcin Warpechowski <warpech@gmail.com>"
+  ],
+  "description": "Loads a SVG inline in your HTML",
+  "main": "juicy-svg-injector.html",
+  "keywords": [
+    "web-components",
+    "svg",
+    "svginjector"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.1.0",
+    "svg-injector": "^1.1.3"
+  }
+}

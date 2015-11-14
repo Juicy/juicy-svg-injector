@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>&lt;juicy-svg-injector&gt;</title>
+  <link rel="stylesheet" href="//juicy.github.io/juicy-tile-list/examples/github-markdown.css">
+
+  <!-- Importing Web Component's Polyfill -->
+  <script src="//cdn.jsdelivr.net/webcomponentsjs/0.7.17/webcomponents.min.js"></script>
+
+  <!-- Importing Custom Elements -->
+  <link rel="import" href="juicy-svg-injector.html">
+  <style type="text/css" media="screen">
+    html,
+    body {
+      height: 100%;
+    }
+
+    #editor {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+    }
+
+    juicy-ace-editor {
+      margin: 15px 15px;
+      width: 45%;
+      height: 13em;
+    }
+
+    .markdown-body {
+      margin: 1em auto;
+      width: 70%;
+    }
+
+    .code-comparison {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .code-comparison>section {
+      width: 45%;
+    }
+
+    iframe {
+      float: right;
+    }
+
+    juicy-svg-injector {
+      width: 200px;
+      height: 200px;
+    }
+
+    juicy-svg-injector /deep/ svg path:nth-child(2) {
+      fill: green;
+    }
+
+    juicy-svg-injector:hover /deep/ svg path:nth-child(2) {
+      fill: seagreen;
+    }
+
+    juicy-svg-injector /deep/ svg path:nth-child(3) {
+      fill: limegreen;
+    }
+
+    juicy-svg-injector:hover /deep/ svg path:nth-child(3) {
+      fill: darkseagreen;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="markdown-body">
+    <iframe src="http://ghbtns.com/github-btn.html?user=juicy&amp;repo=juicy-svg-injector&amp;type=fork&amp;count=true&amp;size=medium" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="30"></iframe>
+    <iframe src="http://ghbtns.com/github-btn.html?user=juicy&amp;repo=juicy-svg-injector&amp;type=watch&amp;count=true&amp;size=medium" allowtransparency="true" frameborder="0" scrolling="0" width="90" height="30"></iframe>
+    <h1>&lt;juicy-svg-injector&gt;</h1>
+    <blockquote>
+      <p>
+        Loads a SVG inline in your HTML, using <a href="https://github.com/iconic/SVGInjector">SVGInjector</a></p>
+    </blockquote>
+
+    <div class="code-comparison">
+      <section>
+        <p>Why is this cool? Because it let's you fill it with
+          <strong>color</strong>!</p>
+        <juicy-svg-injector src="noun_235224.svg"></juicy-svg-injector>
+      </section>
+    </div>
+
+  </article>
+</body>
+
+</html>
