@@ -51,28 +51,28 @@
       float: right;
     }
 
-    juicy-svg-injector {
+    #html5logo {
       width: 200px;
       height: 200px;
     }
 
-    juicy-svg-injector img {
+    img#html5logo {
       display: none;
     }
 
-    juicy-svg-injector svg path:nth-child(2) {
+    svg#html5logo path:nth-child(2) {
       fill: green;
     }
 
-    juicy-svg-injector:hover svg path:nth-child(2) {
+    svg#html5logo:hover path:nth-child(2) {
       fill: seagreen;
     }
 
-    juicy-svg-injector svg path:nth-child(3) {
+    svg#html5logo path:nth-child(3) {
       fill: limegreen;
     }
 
-    juicy-svg-injector:hover svg path:nth-child(3) {
+    svg#html5logo:hover path:nth-child(3) {
       fill: darkseagreen;
     }
   </style>
@@ -93,7 +93,7 @@
         <p>Why is this cool? Because it let's you fill it with
           <strong>color</strong>!</p>
         <juicy-svg-injector>
-          <img src="html5.svg">
+          <img src="html5.svg" id="html5logo">
         </juicy-svg-injector>
       </section>
     </div>

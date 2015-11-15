@@ -6,34 +6,7 @@ version: 1.0.1
 <script src="vendor/svg-injector.js"></script>
 <link rel="import" href="../polymer/polymer.html">
 <dom-module id="juicy-svg-injector">
-
-  <template>
-    <style>
-      :host {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #content-container {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-      }
-
-      #content-container >::content svg,
-      #content-container >::content img {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-    <div id="content-container">
-      <content></content>
-    </div>
-  </template>
-
+  <template><content select="img, svg"></content></template>
   <script>
     Polymer({
       is: "juicy-svg-injector",
@@ -43,5 +16,4 @@ version: 1.0.1
       }
     });
   </script>
-
 </dom-module>
